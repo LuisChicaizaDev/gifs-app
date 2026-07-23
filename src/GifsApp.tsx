@@ -14,7 +14,15 @@ export const GifsApp = () => {
 
   // Controlamos la consulta del usuario
   const handleSearch = (query: string) => {
-    console.log({ query });
+    query = query.trim().toLowerCase();
+
+    if (query === '') return;
+
+    // Comprobamos que el termino no existe anteriormente
+    if (previousTerms.includes(query)) return;
+
+    // Agregamos el término al inicio y recortamos el array a 8 elementos
+    setPreviousTerms([query, ...previousTerms].splice(0, 8));
   };
 
   return (
