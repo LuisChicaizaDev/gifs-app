@@ -1,5 +1,6 @@
 import { CustomHeader } from './components/CustomHeader';
 import { SearchBar } from './components/SearchBar';
+import { GifsList } from './gifs/components/GifsList';
 import { PreviousSearches } from './gifs/components/PreviousSearches';
 import { mockGifs } from './mock-data/gifs-mock';
 
@@ -19,17 +20,7 @@ export const GifsApp = () => {
       <PreviousSearches />
 
       {/* Gifs */}
-      <section className="gifs-container">
-        {mockGifs.map((gif) => (
-          <div key={gif.id} className="gif-card">
-            <img src={gif.url} alt={gif.title} />
-            <h3> {gif.title} </h3>
-            <p>
-              {gif.width}x{gif.height} (1.5MB)
-            </p>
-          </div>
-        ))}
-      </section>
+      <GifsList gifs={mockGifs} />
     </>
   );
 };
