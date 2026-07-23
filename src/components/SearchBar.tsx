@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // Parametrizamos el componente
 interface Props {
   placeholder?: string;
@@ -9,6 +9,21 @@ interface Props {
 export const SearchBar = ({ placeholder = 'Buscar', onQuery }: Props) => {
   // Controlamos el estado del input
   const [query, setQuery] = useState('');
+
+  /*Implementamos nuestro propio Debounce sin paquetes de terceros
+    Se espera 700ms hasta que el usuario deja de escribir 
+  */
+  // El efecto se dispera inmediatamente al mostarse el componente
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      onQuery(query);
+    }, 700);
+
+    // La función de limpieza se dispara cada que se desmota el componente y cada que se dispara la función de callback
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [query, onQuery]);
 
   // Controlamos la búsqueda introducida
   const handleSearch = () => {
