@@ -6,7 +6,6 @@ interface Props {
 
 export const CustomHeader = ({ title, description }: Props) => {
   return (
-    /* Header */
     <section className="content-center">
       <h1>{title}</h1>
       {description && <p>{description}</p>}
