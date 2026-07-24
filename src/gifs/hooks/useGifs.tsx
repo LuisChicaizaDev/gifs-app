@@ -8,8 +8,11 @@ export const useGifs = () => {
   const [gifs, setGifs] = useState<Gif[]>([]);
   const [previousTerms, setPreviousTerms] = useState<string[]>([]);
 
-  const handlePreviousClicked = (term: string) => {
-    console.log({ term });
+  const handlePreviousClicked = async (term: string) => {
+    // Pasamos la query para hacer la petición
+    const gifs = await getGifsByQuery(term);
+
+    setGifs(gifs);
   };
 
   // Controlamos la consulta del usuario
