@@ -1,10 +1,6 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import type { Gif } from '../interfaces/gif-interface';
 import { getGifsByQuery } from '../actions/get-gifs-by-query';
-
-// Cache de búsquedas para evitar repetir peticiones
-// Se mantiene fuera del componente para no reiniciarse al renderizar
-const gifsCache: Record<string, Gif[]> = {};
 
 // Custom Hook
 export const useGifs = () => {
@@ -12,10 +8,14 @@ export const useGifs = () => {
   const [gifs, setGifs] = useState<Gif[]>([]);
   const [previousTerms, setPreviousTerms] = useState<string[]>([]);
 
+  // Cache de búsquedas para evitar repetir peticiones
+  // useRef no causa un re-render y mantiene el estado entre re-renders
+  const gifsCache = useRef<Record<string, Gif[]>>({});
+
   const handlePreviousClicked = async (term: string) => {
-    if (gifsCache[term]) {
+    if (gifsCache.current[term]) {
       // Vuelve a usar los gifs guardados si la búsqueda ya existe
-      setGifs(gifsCache[term]);
+      setGifs(gifsCache.current[term]);
       return;
     }
     // Hace la petición si no está en caché
@@ -43,7 +43,7 @@ export const useGifs = () => {
     setGifs(gifs);
 
     // Guarda los resultados en caché para búsquedas iguales
-    gifsCache[query] = gifs;
+    gifsCache.current[query] = gifs;
   };
 
   return {
