@@ -23,7 +23,7 @@ export const SearchBar = ({ placeholder = 'Buscar', onQuery }: Props) => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [query, onQuery]);
+  }, [query, onQuery]); // Si alguna de esas dependencias cambia, el efecto se vuelve a ejecutar y reinicia el temporizador
 
   // Controlamos la búsqueda introducida
   const handleSearch = () => {
