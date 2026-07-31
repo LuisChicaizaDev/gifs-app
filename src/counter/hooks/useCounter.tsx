@@ -5,7 +5,7 @@ export const useCounter = (initialValue: number = 10) => {
   const [counter, setCounter] = useState(initialValue);
 
   const handleAdd = () => {
-    setCounter(counter + 1);
+    setCounter((prev) => prev + 1); // Usa el valor previo para sumar correctamente en varias llamadas
   };
 
   const handleSubtract = () => {
