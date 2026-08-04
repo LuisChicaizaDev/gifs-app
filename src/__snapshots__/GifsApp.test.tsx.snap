@@ -37,5 +37,31 @@ exports[`GifsApp > should render component properly 1`] = `
   <section
     class="gifs-container"
   />
+  <footer
+    class="footer"
+  >
+    Desarrollado con 
+    <strong>
+      React
+    </strong>
+    , 
+    <strong>
+      TypeScript
+    </strong>
+     y
+     
+    <strong>
+      Tailwind CSS
+    </strong>
+     por
+     
+    <a
+      href="https://luischicaiza.vercel.app/"
+      target="_blank"
+    >
+      Luis Chicaiza
+    </a>
+    .
+  </footer>
 </div>
 `;
