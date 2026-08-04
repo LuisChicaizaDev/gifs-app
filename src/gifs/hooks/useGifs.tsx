@@ -22,6 +22,9 @@ export const useGifs = () => {
     const gifs = await getGifsByQuery(term);
 
     setGifs(gifs);
+
+    // Guarda los resultados en caché
+    gifsCache.current[term] = gifs;
   };
 
   // Controlamos la consulta del usuario
