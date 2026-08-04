@@ -51,7 +51,7 @@ exports[`GifsApp > should render component properly 1`] = `
      y
      
     <strong>
-      Tailwind CSS
+      Vitest
     </strong>
      por
      
