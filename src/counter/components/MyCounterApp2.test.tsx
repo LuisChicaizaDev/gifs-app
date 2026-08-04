@@ -33,6 +33,9 @@ describe('MyCounterApp', () => {
       'Counter: 30'
     );
 
+    //expect(2).toBe(1); // La carpeta '/dist' con npm run build NO se construirá porque falla este test
+    expect(2).toBe(2); // La carpeta '/dist' con npm run build se construirá porque si este test
+
     // Comprobamos los botones con su texto correspondiente
     expect(screen.getByRole('button', { name: '+1' })).toBeDefined();
     expect(screen.getByRole('button', { name: '-1' })).toBeDefined();
