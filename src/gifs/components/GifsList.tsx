@@ -7,15 +7,21 @@ interface Props {
 export const GifsList = ({ gifs }: Props) => {
   return (
     <section className="gifs-container">
-      {gifs.map((gif) => (
-        <div key={gif.id} className="gif-card">
-          <img src={gif.url} alt={gif.title} />
-          <h3> {gif.title} </h3>
-          <p>
-            {gif.width}x{gif.height} (1.5MB)
-          </p>
-        </div>
-      ))}
+      {gifs.length > 0 ? (
+        gifs.map((gif) => (
+          <div key={gif.id} className="gif-card">
+            <img src={gif.url} alt={gif.title} />
+            <h3> {gif.title} </h3>
+            <p>
+              {gif.width}x{gif.height} (1.5MB)
+            </p>
+          </div>
+        ))
+      ) : (
+        <p className="no-results">
+          🔎 Escribe en el buscador para encontrar tu gif.
+        </p>
+      )}
     </section>
   );
 };
