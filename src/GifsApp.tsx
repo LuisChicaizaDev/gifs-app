@@ -1,5 +1,4 @@
 import { CustomHeader } from './components/CustomHeader';
-import { Footer } from './components/Footer';
 import { SearchBar } from './components/SearchBar';
 import { GifsList } from './gifs/components/GifsList';
 import { PreviousSearches } from './gifs/components/PreviousSearches';
@@ -12,7 +11,7 @@ export const GifsApp = () => {
     useGifs();
 
   return (
-    <>
+    <div>
       {/* Header */}
       <CustomHeader
         title="Buscador de gifs"
@@ -30,9 +29,6 @@ export const GifsApp = () => {
 
       {/* Gifs */}
       <GifsList gifs={gifs} />
-
-      {/* Footer */}
-      <Footer />
-    </>
+    </div>
   );
 };
