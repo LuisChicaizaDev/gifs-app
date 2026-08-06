@@ -87,6 +87,7 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  text-align: center;
 }
 
 .previous-searches-list {
