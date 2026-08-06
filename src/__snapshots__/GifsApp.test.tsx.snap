@@ -2,66 +2,45 @@
 
 exports[`GifsApp > should render component properly 1`] = `
 <div>
-  <section
-    class="content-center"
-  >
-    <h1>
-      Buscador de gifs
-    </h1>
-    <p>
-      Descubre y comparte el gif perfecto
-    </p>
-  </section>
-  <section
-    class="search-container"
-  >
-    <input
-      placeholder="Busca un gif"
-      type="text"
-      value=""
-    />
-    <button>
-      Buscar
-    </button>
-  </section>
-  <section
-    class="previous-searches"
-  >
-    <h2>
-      Búsquedas previas
-    </h2>
-    <ul
-      class="previous-searches-list"
-    />
-  </section>
-  <section
-    class="gifs-container"
-  />
-  <footer
-    class="footer"
-  >
-    Desarrollado con 
-    <strong>
-      React
-    </strong>
-    , 
-    <strong>
-      TypeScript
-    </strong>
-     y
-     
-    <strong>
-      Vitest
-    </strong>
-     por
-     
-    <a
-      href="https://luischicaiza.vercel.app/"
-      target="_blank"
+  <div>
+    <section
+      class="content-center"
     >
-      Luis Chicaiza
-    </a>
-    .
-  </footer>
+      <h1>
+        Buscador de gifs
+      </h1>
+      <p>
+        Descubre y comparte el gif perfecto
+      </p>
+    </section>
+    <section
+      class="search-container"
+    >
+      <input
+        placeholder="Busca un gif"
+        type="text"
+        value=""
+      />
+      <button>
+        Buscar
+      </button>
+    </section>
+    <section
+      class="previous-searches"
+    >
+      <ul
+        class="previous-searches-list"
+      />
+    </section>
+    <section
+      class="gifs-container"
+    >
+      <p
+        class="no-results"
+      >
+        🔎 Escribe en el buscador para encontrar tu gif.
+      </p>
+    </section>
+  </div>
 </div>
 `;
